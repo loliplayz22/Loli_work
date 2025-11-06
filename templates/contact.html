@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Contact Us {% endblock %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center text-center mt-20 space-y-4">
+  {% if is_faculty %}
+    <h1 class="text-5xl font-bold">Contact Us</h1>
+    <p class="text-2xl ">Here is my email: {{ email }}</p>
+    <p class="text-2xl ">This is my number: {{ number }}</p>
+  {% else %}
+    <h1 class="text-5xl font-bold">You're not a faculty member!</h1>
+    <p class="text-2xl">This page is only for faculty members.</p>
+  {% endif %}
+
+  {% if instagram %}
+    <p class="text-2xl">Follow me on Instagram: {{ instagram }}</p>
+  {% else %}
+    <p class="text-2xl">Instagram not available</p>
+  {% endif %}
+</div>
+{% endblock %}
